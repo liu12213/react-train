@@ -16,7 +16,7 @@ const styles = {
         display: 'flex',
         listStyleType: 'none',
         flexDirection: 'row',
-        
+
     },
     navItem: {
         display: 'inline-flex',
@@ -81,7 +81,7 @@ class Loading extends React.Component {
 // 这里是所有普通的Components组件
 class Menu extends React.Component {
     render() {
-        const {onClick, current} = this.props;
+        const { onClick, current } = this.props;
         const links = [
             {
                 title: 'All',
@@ -107,10 +107,10 @@ class Menu extends React.Component {
 
         // 现在样式变内联了，如何实现:hover, :active的功能？
         const children = links.map((item, key) =>
-            <li style={styles.navItem}><a href="#" onClick={() => onClick(item.query)} style={current == item.query ? {'color': 'red'} : {color: 'black'}}>{item.title}</a></li>
+            <li style={styles.navItem}><a href="#" onClick={() => onClick(item.query)} style={current == item.query ? { 'color': 'red' } : { color: 'black' }}>{item.title}</a></li>
         );
         return <ul style={styles.nav}>
-        {children}
+            {children}
         </ul>
     }
 }
@@ -130,18 +130,18 @@ class Card extends React.Component {
                 {source.full_name}
             </a></h4>
             <div>
-                <i class="fa fa-user" style={{...styles.icon, color: 'rgb(255, 215, 0)'}}></i><a href={source.owner.html_url} target="_blank">
-                {source.name}
+                <i class="fa fa-user" style={{ ...styles.icon, color: 'rgb(255, 215, 0)' }}></i><a href={source.owner.html_url} target="_blank">
+                    {source.name}
                 </a>
             </div>
             <div>
-                <i class="fa fa-star" style={{...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.stargazers_count} stars
+                <i class="fa fa-star" style={{ ...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.stargazers_count} stars
         </div>
             <div>
-                <i class="fa fa-code-fork" style={{...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.forks} forks
+                <i class="fa fa-code-fork" style={{ ...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.forks} forks
         </div>
             <div>
-                <i class="fa fa-warning" style={{...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.open_issues} Open issues
+                <i class="fa fa-warning" style={{ ...styles.icon, color: 'rgb(255, 215, 0)' }}></i>{source.open_issues} Open issues
         </div>
         </div>
     }
@@ -150,13 +150,12 @@ class Card extends React.Component {
 // 下面是Header, Content, Footer这三个Layout组件
 class Header extends React.Component {
     render() {
-        const {onClick, current} = this.props;
+        const { onClick, current } = this.props;
         return <div style={styles.header}>
-            <Menu onClick={onClick} current={current}/>
+            <Menu onClick={onClick} current={current} />
         </div>;
     }
 }
-
 class Content extends React.Component {
     constructor(props) {
         super(props);
@@ -168,17 +167,19 @@ class Content extends React.Component {
     componentDidMount() {
         this.search();
     }
-    componentDidUpdate (prevProps) {
+    componentDidUpdate(prevProps) {
         if (this.props.query != prevProps.query) {
             this.search();
         }
     }
     search = async () => {
-        const {query} = this.props;
+        const { query } = this.props;
+        
         const url = `https://api.github.com/search/repositories?q=${query}&sort=stars&order=desc&type=Repositories`;
         console.log('url', url);
         this.setState({ loading: true })
         try {
+          
             const res = await axios.get(url)
             console.log('res', res.data)
             this.setState({
