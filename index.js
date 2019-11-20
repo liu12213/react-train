@@ -35820,7 +35820,7 @@ function (_React$Component) {
           current = _this$props.current,
           oncurClick = _this$props.oncurClick;
       var alist = [{
-        title: "热门项目",
+        title: "popular",
         curquery: "pop"
       }, {
         title: "battle",

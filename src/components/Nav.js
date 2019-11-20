@@ -13,7 +13,7 @@ class Nav extends React.Component {
     const { current, oncurClick } = this.props;
     const alist = [
       {
-        title: "热门项目",
+        title: "popular",
         curquery: "pop"
       },
       {

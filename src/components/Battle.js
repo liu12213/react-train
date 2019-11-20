@@ -25,7 +25,7 @@ class Battle extends React.Component {
             />
           </li>
           <li style={{ padding: "40px", textAlign: "center", width: "200px" }}>
-            <p style={{ fontSize: "20px" }}>战斗</p>
+            <p style={{ fontSize: "20px" }}>BATTLE</p>
             <i
               className="fa fa-fighter-jet"
               aria-hidden="true"
@@ -33,7 +33,7 @@ class Battle extends React.Component {
             />
           </li>
           <li style={{ padding: "40px", textAlign: "center", width: "200px" }}>
-            <p style={{ fontSize: "20px" }}>获胜者</p>
+            <p style={{ fontSize: "20px" }}>WINNER</p>
             <i
               className="fa fa-trophy"
               aria-hidden="true"
@@ -41,7 +41,7 @@ class Battle extends React.Component {
             />
           </li>
         </ul>
-        <h1 style={{ textAlign: "center", marginTop: "150px" }}>玩家</h1>
+        <h1 style={{ textAlign: "center", marginTop: "150px" }}>PLEYER</h1>
         <div
           style={{
             display: "flex",
