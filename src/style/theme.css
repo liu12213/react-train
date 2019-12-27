@@ -1,0 +1,29 @@
+.nowcolor{
+    text-decoration: none;
+    color:#820014;
+}
+.color{
+    text-decoration: none;
+    color: inherit;
+}
+
+.hide{
+    display:none;
+}
+
+.inputoff{
+    padding:5px 15px 5px 15px;
+    margin:5px;
+    border:0;
+    border-radius:5px;
+    background:#e8e8e8;
+    color:#8c8c8c
+}
+.inputon{
+    background:#262626;
+    margin:5px;
+    border:0;
+    border-radius:5px;
+    padding:5px 15px 5px 15px;
+    color:#f5f5f5;
+}
